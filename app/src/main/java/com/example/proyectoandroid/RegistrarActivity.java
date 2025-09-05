@@ -55,6 +55,7 @@ public class RegistrarActivity extends AppCompatActivity {
             }
         });
 
+
         btnRegistrarse.setOnClickListener(new View.OnClickListener() {
             public boolean CampoVerificar() {
                 boolean listo = true;

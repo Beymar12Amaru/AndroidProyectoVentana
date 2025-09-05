@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,6 +30,12 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+        EditText InputP = findViewById(R.id.inputP);
+        EditText InputPassword = findViewById(R.id.inputC);
+
+
+        //String NombreUsuarioSave = nombreUsu;
+
         btnReg = findViewById(R.id.btnRegistrar);
         // al parecer no es necesario colocar el onClick en el xml
         btnReg.setOnClickListener(new View.OnClickListener() {
@@ -39,12 +46,38 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+
         button1 = findViewById(R.id.btn2);
         button1.setOnClickListener(new View.OnClickListener() {
+
+            String InputPGet = InputP.getText().toString();
+            String InputPasswordGet = InputPassword.getText().toString();
+            public boolean VerificarDatos(){
+                boolean Listo = true;
+
+                if (InputPGet.isEmpty()) {
+                    InputP.setError("Ingresar datos");
+                    Listo = false;
+                }
+
+                if(InputPasswordGet.isEmpty()){
+                    InputPassword.setError("Ingresar datos");
+                    Listo = false;
+                }
+                
+                return Listo;
+            }
+
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this,PagePrincipalActivity.class);
-                startActivity(intent);
+
+                if(VerificarDatos()){
+                    startActivity(intent);
+                }
+
+
             }
         });
     }

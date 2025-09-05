@@ -7,6 +7,60 @@
     android:layout_height="match_parent"
     tools:context=".RegistrarActivity">
 
+    <TextView
+        android:id="@+id/txtReVeri4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FCFAF8F8"
+        android:backgroundTint="#FFFFFF"
+        android:drawableTint="#FDFDFD"
+        android:foregroundTint="#FBFBFB"
+        android:shadowColor="#FAF6F6"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#FA0505"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.623"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.607" />
+
+    <TextView
+        android:id="@+id/txtReVeri3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FCFAF8F8"
+        android:backgroundTint="#FFFFFF"
+        android:drawableTint="#FDFDFD"
+        android:foregroundTint="#FBFBFB"
+        android:shadowColor="#FAF6F6"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#FA0505"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.633"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.483" />
+
+    <TextView
+        android:id="@+id/txtReVeri2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FCFAF8F8"
+        android:backgroundTint="#FFFFFF"
+        android:drawableTint="#FDFDFD"
+        android:foregroundTint="#FBFBFB"
+        android:shadowColor="#FAF6F6"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#FA0505"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.633"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.338" />
+
     <Button
         android:id="@+id/btnRegistrarse"
         android:layout_width="wrap_content"
@@ -148,5 +202,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.413" />
+
+    <TextView
+        android:id="@+id/txtReVeri1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FCFAF8F8"
+        android:backgroundTint="#FFFFFF"
+        android:drawableTint="#FDFDFD"
+        android:foregroundTint="#FBFBFB"
+        android:shadowColor="#FAF6F6"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#FA0505"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.633"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.213" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

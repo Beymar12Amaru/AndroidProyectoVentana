@@ -29,6 +29,10 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+
+
+        //String NombreUsuarioSave = nombreUsu;
+
         btnReg = findViewById(R.id.btnRegistrar);
         // al parecer no es necesario colocar el onClick en el xml
         btnReg.setOnClickListener(new View.OnClickListener() {

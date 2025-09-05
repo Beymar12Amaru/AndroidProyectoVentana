@@ -3,6 +3,7 @@ package com.example.proyectoandroid;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,6 +31,14 @@ public class PagePrincipalActivity extends AppCompatActivity {
         btnSomos = findViewById(R.id.btnSomos);
         btnLista = findViewById(R.id.btnLista);
         btnPerfil = findViewById(R.id.btnPerfil);
+        TextView txtBienvenido = findViewById(R.id.txtBienvenido);
+
+        Bundle extras = getIntent().getExtras();
+
+        /*if(extras != null){
+            String nombreUsu = extras.getString("nombre_usuario");
+            txtBienvenido.setText(nombreUsu);
+        } */
 
         // completen las funciones teniendo en cuenta las ventanas y el nombre que les pusieron :v
         /*
@@ -53,5 +62,11 @@ public class PagePrincipalActivity extends AppCompatActivity {
 
             }
         }); */
+
+
+
+
+
+
     }
 }

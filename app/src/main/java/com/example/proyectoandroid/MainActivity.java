@@ -17,7 +17,9 @@ public class MainActivity extends AppCompatActivity {
     //eso
     Button btnReg;
     Button button1;
-    //EditText
+    String CorreoU;
+    String RutU;
+
 
 
     @Override
@@ -68,6 +70,14 @@ public class MainActivity extends AppCompatActivity {
                     // Recupera los datos usando las mismas claves
                     String usuarioExtrasVer = extras.getString("nombre_usuario");
                     String PasswordextrasVer = extras.getString("Password_usuario");
+                    String CorreoExtrasVer = extras.getString("correo_usuario");
+                    String RutExtrasVer = extras.getString("rut_usuario");
+
+                    //
+                    CorreoU = CorreoExtrasVer;
+                    RutU = RutExtrasVer;
+
+
 
                     if(!InputPGet.equals(usuarioExtrasVer)){
                        InputP.setError("Usuario no encontrado");
@@ -87,9 +97,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                String CorreoVer = CorreoU;
+                String RutVer = RutU;
+
                 String NombreUsuario = InputP.getText().toString();
                 Intent intent = new Intent(MainActivity.this,PagePrincipalActivity.class);
                 intent.putExtra("NomUsuario_listo", NombreUsuario);
+                intent.putExtra("CorreoUsuario_listo", CorreoVer);
+                intent.putExtra("RutUsuario_listo", RutVer);
 
                 //si los campos EditTxt estan llenados, podremos ocupar el btn
                 if(VerificarDatos()){

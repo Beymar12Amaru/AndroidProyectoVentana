@@ -25,34 +25,22 @@
         app:srcCompat="@drawable/gato_weon_con_cara_de_weon" />
 
     <Button
-        android:id="@+id/btnListaPersonajes"
+        android:id="@+id/btnCrear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Lista Usuarios"
+        android:text="Crear Carrera"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.091"
+        app:layout_constraintHorizontal_bias="0.545"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.748" />
+        app:layout_constraintVertical_bias="0.729" />
 
     <Button
-        android:id="@+id/btnSomos"
+        android:id="@+id/btnPerfil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Quienes somos"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.897"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.748" />
-
-    <Button
-        android:id="@+id/btnPersonajes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Personajes"
+        android:text="Perfil"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.975"

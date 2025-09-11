@@ -45,10 +45,6 @@ public class RegistrarActivity extends AppCompatActivity {
 
 
 
-
-
-
-
         btnVolver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -59,6 +55,8 @@ public class RegistrarActivity extends AppCompatActivity {
 
 
         btnRegistrarse.setOnClickListener(new View.OnClickListener() {
+
+            // verificamos que los campos EditTxt no esten vacios
             public boolean CampoVerificar() {
                 boolean listo = true;
 
@@ -94,16 +92,16 @@ public class RegistrarActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String VeriCamNombre1 = ReInputNombre.getText().toString();
+                String VeriCamPassword1 = ReInputPassword.getText().toString();
 
                 Intent intent = new Intent(RegistrarActivity.this,MainActivity.class);
                 intent.putExtra("nombre_usuario", VeriCamNombre1);
+                intent.putExtra("Password_usuario", VeriCamPassword1);
 
                 if(CampoVerificar()){
                     Toast.makeText(RegistrarActivity.this, "Registrado Correctamente :v", Toast.LENGTH_SHORT).show();
                     startActivity(intent);
                 }
-
-
             }
         });
 

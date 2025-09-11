@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     //eso
     Button btnReg;
     Button button1;
+    //EditText
 
 
     @Override
@@ -33,11 +34,10 @@ public class MainActivity extends AppCompatActivity {
         EditText InputP = findViewById(R.id.inputP);
         EditText InputPassword = findViewById(R.id.inputC);
 
+        Bundle extras = getIntent().getExtras();
 
-        //String NombreUsuarioSave = nombreUsu;
 
         btnReg = findViewById(R.id.btnRegistrar);
-        // al parecer no es necesario colocar el onClick en el xml
         btnReg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -47,14 +47,12 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
         button1 = findViewById(R.id.btn2);
         button1.setOnClickListener(new View.OnClickListener() {
-
-            String InputPGet = InputP.getText().toString();
-            String InputPasswordGet = InputPassword.getText().toString();
             public boolean VerificarDatos(){
                 boolean Listo = true;
+                String InputPGet = InputP.getText().toString();
+                String InputPasswordGet = InputPassword.getText().toString();
 
                 if (InputPGet.isEmpty()) {
                     InputP.setError("Ingresar datos");
@@ -65,19 +63,38 @@ public class MainActivity extends AppCompatActivity {
                     InputPassword.setError("Ingresar datos");
                     Listo = false;
                 }
-                
+
+                if (extras != null) {
+                    // Recupera los datos usando las mismas claves
+                    String usuarioExtrasVer = extras.getString("nombre_usuario");
+                    String PasswordextrasVer = extras.getString("Password_usuario");
+
+                    if(!InputPGet.equals(usuarioExtrasVer)){
+                       InputP.setError("Usuario no encontrado");
+                       Listo = false;
+                    }
+
+                    if(!InputPasswordGet.equals(PasswordextrasVer)){
+                        InputPassword.setError("Contraseña no valida");
+                        Listo = false;
+                    }
+                }
+
                 return Listo;
             }
 
+
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,PagePrincipalActivity.class);
 
+                String NombreUsuario = InputP.getText().toString();
+                Intent intent = new Intent(MainActivity.this,PagePrincipalActivity.class);
+                intent.putExtra("NomUsuario_listo", NombreUsuario);
+
+                //si los campos EditTxt estan llenados, podremos ocupar el btn
                 if(VerificarDatos()){
                     startActivity(intent);
                 }
-
-
             }
         });
     }

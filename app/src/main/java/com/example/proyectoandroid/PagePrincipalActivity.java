@@ -1,5 +1,6 @@
 package com.example.proyectoandroid;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,7 +16,7 @@ public class PagePrincipalActivity extends AppCompatActivity {
 
     Button btnSomos;
     Button btnLista;
-    Button btnPerfil;
+    Button btnPersonajes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,42 +29,29 @@ public class PagePrincipalActivity extends AppCompatActivity {
             return insets;
         });
 
-        btnSomos = findViewById(R.id.btnSomos);
-        btnLista = findViewById(R.id.btnLista);
-        btnPerfil = findViewById(R.id.btnPerfil);
-        TextView txtBienvenido = findViewById(R.id.txtBienvenido);
-
         Bundle extras = getIntent().getExtras();
 
-        /*if(extras != null){
-            String nombreUsu = extras.getString("nombre_usuario");
-            txtBienvenido.setText(nombreUsu);
-        } */
+        if (extras != null) {
+            // Recupera los datos usando las mismas claves
+            String nombreRecibido = extras.getString("NomUsuario_listo");
 
-        // completen las funciones teniendo en cuenta las ventanas y el nombre que les pusieron :v
-        /*
-        btnPerfil.setOnClickListener(new View.OnClickListener() {
+
+            // Muestra los datos en los TextViews del layout
+            TextView tvNombre = findViewById(R.id.txtBienvenido);
+
+            tvNombre.setText("Bienvenido " + nombreRecibido);
+        }
+
+
+        btnPersonajes = findViewById(R.id.btnPersonajes);
+
+        /*btnPersonajes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(PagePrincipalActivity.this, VetananpMain2Activity.class);
+                startActivity(intent);
             }
-        });
-
-        btnSomos.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-
-        btnLista.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        }); */
-
-
+        });*/
 
 
 

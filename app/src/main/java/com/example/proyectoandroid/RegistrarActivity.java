@@ -108,14 +108,5 @@ public class RegistrarActivity extends AppCompatActivity {
                 }
             }
         });
-
-
-
-
     }
-
-    //funcion para verificar los cmpos llenos
-
-
-
 }

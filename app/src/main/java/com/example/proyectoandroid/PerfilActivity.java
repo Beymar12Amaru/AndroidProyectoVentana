@@ -37,7 +37,7 @@ public class PerfilActivity extends AppCompatActivity {
 
             TextView txtNombreMostrar = findViewById(R.id.txtNombreMostrar);
             TextView txtCorreoMostrar = findViewById(R.id.txtCorreoMostrar);
-            TextView txtRutMostrar = findViewById(R.id.idMostrar);
+            TextView txtRutMostrar = findViewById(R.id.txtRutMostrar);
 
             txtNombreMostrar.setText( extrasObtenerNom);
             txtCorreoMostrar.setText(extrasObtenerCor);

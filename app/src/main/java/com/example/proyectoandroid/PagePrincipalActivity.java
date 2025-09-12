@@ -19,9 +19,7 @@ public class PagePrincipalActivity extends AppCompatActivity {
     Button btnCrear;
     Button btnPerfil;
     //creamos una varialbe para almacenar el string de la otra pagina
-    String NombreUsuariover;
-    String CorreoUs;
-    String RutUs;
+    String NombreUsuariover, CorreoUs, RutUs;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -40,17 +38,13 @@ public class PagePrincipalActivity extends AppCompatActivity {
 
         if (extras != null) {
             // Recupera los datos usando las mismas claves
-            String nombreRecibido = extras.getString("NomUsuario_listo");
-            String CorreoRecibido = extras.getString("CorreoUsuario_listo");
-            String RutRecibido = extras.getString("RutUsuario_listo");
+            NombreUsuariover = extras.getString("NomUsuario_listo");
+            CorreoUs = extras.getString("CorreoUsuario_listo");
+            RutUs = extras.getString("RutUsuario_listo");
 
             TextView tvNombre = findViewById(R.id.txtBienvenido);
 
-            tvNombre.setText("Bienvenido " + nombreRecibido);
-
-            NombreUsuariover = nombreRecibido;
-            CorreoUs = CorreoRecibido;
-            RutUs = RutRecibido;
+            tvNombre.setText("Bienvenido " + NombreUsuariover);
 
         }
 
@@ -60,14 +54,10 @@ public class PagePrincipalActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String UsuarioVer = NombreUsuariover;
-                String CorreoVer = CorreoUs;
-                String RutVer = RutUs;
-
                 Intent intent = new Intent(PagePrincipalActivity.this, PerfilActivity.class);
-                intent.putExtra("usuarioNombre1",UsuarioVer );
-                intent.putExtra("usuarioCorreo1",CorreoVer );
-                intent.putExtra("usuarioRut1",RutVer );
+                intent.putExtra("usuarioNombre1",NombreUsuariover );
+                intent.putExtra("usuarioCorreo1",CorreoUs );
+                intent.putExtra("usuarioRut1",RutUs );
                 startActivity(intent);
             }
         });

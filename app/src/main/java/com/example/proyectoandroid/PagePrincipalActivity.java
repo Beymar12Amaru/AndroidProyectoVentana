@@ -68,7 +68,6 @@ public class PagePrincipalActivity extends AppCompatActivity {
                 intent.putExtra("usuarioNombre1",UsuarioVer );
                 intent.putExtra("usuarioCorreo1",CorreoVer );
                 intent.putExtra("usuarioRut1",RutVer );
-
                 startActivity(intent);
             }
         });

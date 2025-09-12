@@ -17,6 +17,8 @@ public class MainActivity extends AppCompatActivity {
     //eso
     Button btnReg;
     Button button1;
+    String CorreoU, RutU, UsuarioU, PasswordU;
+
 
 
     @Override
@@ -30,14 +32,21 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+
         EditText InputP = findViewById(R.id.inputP);
         EditText InputPassword = findViewById(R.id.inputC);
+        Bundle extras = getIntent().getExtras();
 
+        if (extras != null) {
+            // Recupera los datos usando las mismas claves
+            UsuarioU = extras.getString("nombre_usuario");
+            PasswordU = extras.getString("Password_usuario");
+            CorreoU = extras.getString("correo_usuario");
+            RutU = extras.getString("rut_usuario");
+        }
 
-        //String NombreUsuarioSave = nombreUsu;
 
         btnReg = findViewById(R.id.btnRegistrar);
-        // al parecer no es necesario colocar el onClick en el xml
         btnReg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -47,14 +56,12 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
         button1 = findViewById(R.id.btn2);
         button1.setOnClickListener(new View.OnClickListener() {
-
-            String InputPGet = InputP.getText().toString();
-            String InputPasswordGet = InputPassword.getText().toString();
             public boolean VerificarDatos(){
                 boolean Listo = true;
+                String InputPGet = InputP.getText().toString();
+                String InputPasswordGet = InputPassword.getText().toString();
 
                 if (InputPGet.isEmpty()) {
                     InputP.setError("Ingresar datos");
@@ -65,20 +72,38 @@ public class MainActivity extends AppCompatActivity {
                     InputPassword.setError("Ingresar datos");
                     Listo = false;
                 }
-                
+
+                if (UsuarioU != null && PasswordU != null) {
+                    // Verifica que el usuario y la contraseña coincidan
+                    if (!InputPGet.equals(UsuarioU)) {
+                        InputP.setError("Usuario no encontrado");
+                        Listo = false;
+                    }
+
+                    if (!InputPasswordGet.equals(PasswordU)) {
+                        InputPassword.setError("Contraseña no valida");
+                        Listo = false;
+                    }
+                }
                 return Listo;
             }
 
+
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,PagePrincipalActivity.class);
 
+                Intent intent = new Intent(MainActivity.this,PagePrincipalActivity.class);
+                intent.putExtra("NomUsuario_listo", UsuarioU);
+                intent.putExtra("CorreoUsuario_listo", CorreoU);
+                intent.putExtra("RutUsuario_listo", RutU);
+
+                //si los campos EditTxt estan llenados, podremos ocupar el btn
                 if(VerificarDatos()){
                     startActivity(intent);
                 }
-
-
             }
         });
+
+
     }
 }

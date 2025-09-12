@@ -45,10 +45,6 @@ public class RegistrarActivity extends AppCompatActivity {
 
 
 
-
-
-
-
         btnVolver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -59,6 +55,8 @@ public class RegistrarActivity extends AppCompatActivity {
 
 
         btnRegistrarse.setOnClickListener(new View.OnClickListener() {
+
+            // verificamos que los campos EditTxt no esten vacios
             public boolean CampoVerificar() {
                 boolean listo = true;
 
@@ -94,26 +92,21 @@ public class RegistrarActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String VeriCamNombre1 = ReInputNombre.getText().toString();
+                String VeriCamPassword1 = ReInputPassword.getText().toString();
+                String VeriCamCorreo1 = ReInputCorreo.getText().toString();
+                String VeriCamRut1 = ReInputRut.getText().toString();
 
                 Intent intent = new Intent(RegistrarActivity.this,MainActivity.class);
                 intent.putExtra("nombre_usuario", VeriCamNombre1);
+                intent.putExtra("Password_usuario", VeriCamPassword1);
+                intent.putExtra("correo_usuario", VeriCamCorreo1);
+                intent.putExtra("rut_usuario", VeriCamRut1);
 
                 if(CampoVerificar()){
                     Toast.makeText(RegistrarActivity.this, "Registrado Correctamente :v", Toast.LENGTH_SHORT).show();
                     startActivity(intent);
                 }
-
-
             }
         });
-
-
-
-
     }
-
-    //funcion para verificar los cmpos llenos
-
-
-
 }

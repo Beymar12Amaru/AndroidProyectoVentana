@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,16 +14,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProyectoAndroid">
         <activity
+            android:name=".ListaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Crear_personajesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PerfilActivity"
+            android:exported="false" />
+        <activity
             android:name=".PagePrincipalActivity"
-            android:exported="false" />
-        <activity
-            android:name=".pantalla2"
-            android:exported="false" />
-        <activity
-            android:name=".pantalla_2"
-            android:exported="false" />
-        <activity
-            android:name=".otrapantalla"
             android:exported="false" />
         <activity
             android:name=".RegistrarActivity"

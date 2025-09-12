@@ -1,5 +1,7 @@
 package com.example.proyectoandroid;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,10 +15,13 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class PagePrincipalActivity extends AppCompatActivity {
 
-    Button btnSomos;
-    Button btnLista;
-    Button btnPerfil;
 
+    Button btnCrear;
+    Button btnPerfil;
+    //creamos una varialbe para almacenar el string de la otra pagina
+    String NombreUsuariover, CorreoUs, RutUs;
+
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,42 +33,43 @@ public class PagePrincipalActivity extends AppCompatActivity {
             return insets;
         });
 
-        btnSomos = findViewById(R.id.btnSomos);
-        btnLista = findViewById(R.id.btnLista);
-        btnPerfil = findViewById(R.id.btnPerfil);
-        TextView txtBienvenido = findViewById(R.id.txtBienvenido);
 
         Bundle extras = getIntent().getExtras();
 
-        /*if(extras != null){
-            String nombreUsu = extras.getString("nombre_usuario");
-            txtBienvenido.setText(nombreUsu);
-        } */
+        if (extras != null) {
+            // Recupera los datos usando las mismas claves
+            NombreUsuariover = extras.getString("NomUsuario_listo");
+            CorreoUs = extras.getString("CorreoUsuario_listo");
+            RutUs = extras.getString("RutUsuario_listo");
 
-        // completen las funciones teniendo en cuenta las ventanas y el nombre que les pusieron :v
-        /*
+            TextView tvNombre = findViewById(R.id.txtBienvenido);
+
+            tvNombre.setText("Bienvenido " + NombreUsuariover);
+
+        }
+
+
+        btnPerfil = findViewById(R.id.btnPerfil);
         btnPerfil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                Intent intent = new Intent(PagePrincipalActivity.this, PerfilActivity.class);
+                intent.putExtra("usuarioNombre1",NombreUsuariover );
+                intent.putExtra("usuarioCorreo1",CorreoUs );
+                intent.putExtra("usuarioRut1",RutUs );
+                startActivity(intent);
             }
         });
 
-        btnSomos.setOnClickListener(new View.OnClickListener() {
+        btnCrear = findViewById(R.id.btnCrear);
+        btnCrear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(PagePrincipalActivity.this, Crear_personajesActivity.class);
+                startActivity(intent);
             }
         });
-
-        btnLista.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        }); */
-
-
 
 
 
